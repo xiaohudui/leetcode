@@ -2,10 +2,6 @@ package easy;
 public class Median {
 	/**
 	 * 直接遍历，寻找两数组开头的最小值,时间复杂度O(m+n)
-	 * 
-	 * @param A
-	 * @param B
-	 * @return
 	 */
 	public static double findMedianSortedArrays(int A[], int B[]) {
 		double ans = 0;
@@ -48,8 +44,6 @@ public class Median {
 	 * 二分查找，时间复杂度log(m+n)
 	 * 寻找第k小数，分别找A的第k/2,和B的K/2，若A[k/2-1]< B[k/2-1]，则A的前
 	 * k/2个数在我们要找的数之前,迭代
-	 * 
-	 * @return
 	 */
 	public static double solution(int A[], int B[]) {
 		int m = A.length;
