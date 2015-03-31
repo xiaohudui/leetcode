@@ -1,0 +1,1 @@
+select t2.Id from Weather t1,Weather t2 where(t1.Temperature<t2.Temperature and to_days(t2.Date)-to_days(t1.Date)=1);

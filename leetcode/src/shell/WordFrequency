@@ -1,0 +1,11 @@
+#awk
+awk '{
+for(i=1;i<=NF;i++)
+    words[$i]++
+}
+END{
+for(word in words)
+    printf("%s %s\n",word,words[word])|"sort -rnk 2"
+}' words.txt
+#tr 转换" "为"\n"化为多行处理
+cat words.txt|tr -s " " "\n"|sort|uniq -c|sort -nr|awk '{print $2,$1}' 

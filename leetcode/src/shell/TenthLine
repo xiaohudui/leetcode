@@ -1,0 +1,4 @@
+#方法一：
+sed -n '10p' file.txt
+#方法二：
+awk 'NR==10' file.txt
