@@ -1,0 +1,2 @@
+#子查询 别名
+select a.Name from Employee a where a.Salary>(select b.Salary from Employee b where b.Id=a.ManagerId);

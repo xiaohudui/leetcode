@@ -1,0 +1,4 @@
+#distinct join
+select distinct a.Email from Person a join Person b where a.Email=b.Email and a.id<>b.id;
+#group by count 
+select Email from Person group by Email having count(*)>1;

@@ -1,0 +1,2 @@
+#max 聚合函数对应的到底是哪个分组？
+select max(Salary) from Employee where Salary < (select max(Salary) from Employee);
