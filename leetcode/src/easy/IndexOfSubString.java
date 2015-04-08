@@ -130,4 +130,83 @@ public class IndexOfSubString {
 		}
 		return -1;
 	}
+	/**
+	 * 将字串hash值与母串进行比较
+	 * 问题：不断计算母串截取的hash值，和进行逐个比较，并不会省时间
+	 * 经测试，基本还是暴力算法
+	 */
+	public int IndexOfRK(String haystack,String needle){
+		if (needle.length() == 0) {
+			return 0;
+		}
+		if (needle.length() > haystack.length()) {
+			return -1;
+		}
+		long subHash=hashCode(needle);
+		long hash=0;
+		for (int i = 0; i <= haystack.length()-needle.length(); i++) {
+			if(i<1){
+				hash=hashCode(haystack.substring(0,needle.length()));
+			}else{
+				hash=(hash/41-haystack.charAt(i-1)+haystack.charAt(i+needle.length()-1))*41;
+			}
+			if(hash==subHash && needle.equals(haystack.substring(i,i+needle.length()))){
+				return i;
+			}
+		}
+		return -1;
+	}
+	public long hashCode(String str){
+		int R=41;
+		long hash=0;
+		for (int i = 0; i < str.length(); i++) {
+			hash+=str.charAt(i);
+		}
+		return hash*R;
+	}
+	/**
+	 * KMP算法：前向匹配，如果已经匹配的部分不存在后缀和前缀相等的部分那么 i+1 j=0，如果存在后缀等于前缀，只能将前缀移动到和后缀相对的位置
+	 */
+	public int indexOfKMP(String haystack,String needle){
+		if (needle.length() == 0) {
+			return 0;
+		}
+		if (needle.length() > haystack.length()) {
+			return -1;
+		}
+		int[] next=generateNext(needle);
+		for(int i=0,j=0;i<haystack.length();i++){
+			while (j > 0 && haystack.charAt(i) != needle.charAt(j)) {
+				j = next[j-1];
+			}
+			if(haystack.charAt(i)==needle.charAt(j)){
+				j++;
+			}
+			if(j==needle.length()){
+				return i-j+1;
+			}
+		}
+		return -1;
+	}
+	/**
+	 * 计算后缀与前缀的最大匹配，用到动态规划的思想，j指向的是匹配前缀的后一个字符，i指向的是后一个字符，
+	 * 1. 如果相等，那么前缀和后缀匹配长度加一，
+	 * 2. 如果不等，j指向前一个最大匹配前缀的后面，
+	 * 关键代码：j = next[j-1] 寻找最大前缀也用上述思想，当最后一个不匹配时，找到j之前的后缀与前缀的最大匹配，
+	 * j移动到其后面，保证了j之前的前缀和后缀是匹配的
+	 */
+	public int[] generateNext(String str){
+		int[] next=new int[str.length()];
+		next[0]=0;
+		for(int i=1,j=0;i<str.length();i++){
+			while (j > 0 && str.charAt(i) != str.charAt(j)) {
+				j = next[j-1];
+			}
+			if(str.charAt(i)==str.charAt(j)){
+				j++;
+			}
+			next[i]=j;
+		}
+		return next;
+	}
 }
