@@ -12,8 +12,4 @@ public class SingleNumber {
 		}
         return res;
     }
-    public static void main(String[] args) {
-		int[] A={1,1,2,2,3,4,4};
-		System.out.println(new SingleNumber().singleNumber(A));
-	}
 }
