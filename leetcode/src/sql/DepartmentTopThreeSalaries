@@ -1,0 +1,1 @@
+select d.Name,e.Name,e.Salary from Employee e join Department d on e.DepartmentId=d.Id where (select count(distinct(Salary)) from Employee where DepartmentId=e.DepartmentId and Salary>e.Salary)<3 order by d.Name,e.Salary desc; 

@@ -1,0 +1,1 @@
+select d.Name,e.Name,e.Salary from (select d.Id,d.Name,Salary from Department d join (select DepartmentId,max(Salary) as Salary from Employee group by DepartmentId) temp on temp.DepartmentId=d.Id) d join Employee e on e.Salary=d.Salary and e.DepartmentId=d.Id; 
