@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 /**
  * 自己构造的hashmap算法往往不是最优 hash值得求解可以采用迭代的方法，不用每次都自己算一遍 每个数的hash值可以不用存下来
- * 
+ * 特定的问题，系统的集合API并不一定会快
  * @author xiaohu
  *
  */
