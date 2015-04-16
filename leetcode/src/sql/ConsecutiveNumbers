@@ -1,0 +1,2 @@
+#统计次数用having count()
+select distinct(a.Num)  from Logs a join Logs b on a.Num=b.Num and a.Id-b.Id<=1 and a.Id-b.Id>=-1 group by a.Id having count(*)>=3;

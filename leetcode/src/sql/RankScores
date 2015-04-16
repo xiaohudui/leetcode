@@ -1,0 +1,4 @@
+#排名就是比自己大的个数
+select Score,(select count(distinct(Score)) from Scores where Score>=s.Score) as rank from Scores s order by Score desc;
+#自变量的方法：(无法实现同样的值排名相同的功能)
+select @counter:=@counter+1 as rank,Score from Scores,(select @counter:=0) rank order by Score desc;
