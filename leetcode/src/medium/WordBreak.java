@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class WordBreak {
 	/**
-	 * ÀàËÆÓÚ°Ë»ÊºóÎÊÌâµÄ»ØËİËã·¨£¬Ê±¼ä¸´ÔÓ¶ÈÖ¸Êı¼¶ Ò»£º²ğ·Öµ¥´Êµİ¹é ¶ş£º×éºÏµ¥´Ê
+	 * é€’å½’æ–¹æ³•ï¼Œé€å­—ç¬¦çš„å›æº¯ï¼Œç±»ä¼¼å…«çš‡åçš„æ–¹æ³•
 	 */
 	public boolean wordBreak(String s, Set<String> dict) {
 		if (s == null || s.length() == 0 || dict.contains(s)) {
@@ -20,7 +20,7 @@ public class WordBreak {
 		return false;
 	}
 	/**
-	 * ²»¶ÏÅĞ¶Ï×ÖµäÖĞµÄµ¥´ÊÊÇ·ñ¿ÉÒÔ³ÉÎªµ¥´ÊµÄµÚÒ»²¿·Ö Ê±¼ä¸´ÔÓ¶ÈO(n^2)
+	 * é€’å½’æ–¹æ³•ï¼Œä¸æ–­åœ°å¯»æ‰¾å¤´éƒ¨
 	 */
 	public boolean wordBreak1(String s, Set<String> dict) {
 		return wordBreakHelper(s, dict, 0);
@@ -44,7 +44,7 @@ public class WordBreak {
 		return false;
 	}
 	/**
-	 * ¶¯Ì¬¹æ»®£¬¶¨ÒåÒ»¸öÊı×é£¬É¨ÃèËùÓĞ×Öµäµ¥´ÊÊ±¼ÇÂ¼ÄÜ²»ÄÜºÏ³Éµ½Ä³¸öÎ»ÖÃ£¬µ±Ç°Î»ÖÃÍ¨¹ıÇ°Ãæ²»¿Éµ½´ïÊ±Ö±½ÓÌø¹ı Àà±ÈÉÏÂ¥ÌİµÄ¹ı³Ì
+	 * åŠ¨æ€è§„åˆ’ï¼Œæ£€æŸ¥æ—¶è·³è¿‡å·²ç¡®å®šä¸å¯ä»¥åˆ°è¾¾çš„ç‚¹
 	 */
 	public boolean wordBreak3(String s, Set<String> dict) {
 		boolean[] canReach = new boolean[s.length() + 1];
@@ -67,8 +67,7 @@ public class WordBreak {
 		return canReach[s.length()];
 	}
 	/**
-	 * ÕıÔò±í´ïÊ½Æ¥Åä·¨£ºsÊÇÕâĞ©µ¥´ÊµÄÒ»´Î»ò¶à´Î×éºÏ£¬match(("hello"|"world")*)
-	 * ÕıÔòÆ¥ÅäÒ²»áºÜºÄÊ±¼ä£¬µ«ÊÇ¿ÉÒÔ¹¹ÔìÒ»¸öDFA,Ê¹µÃÊ±¼ä¸´ÔÓ¶È½«ÎªO(n)
+	 * å°†å­—å…¸ä¸­çš„å­—ç¬¦ä¸²æ‹¼æ¥æˆæ­£åˆ™è¡¨è¾¾å¼ï¼ŒæŸ¥æ‰¾çš„ä¸²å‡ºäºå…¶ä¸­*ä¸ª
 	 */
 	public boolean wordBreak4(String s,Set<String> dict){
 		StringBuilder sb=new StringBuilder();
