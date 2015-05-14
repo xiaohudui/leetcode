@@ -11,7 +11,7 @@ public class ReorderList {
     	ListNode slow=head;
     	while(fast.next!=null && fast.next.next!=null){
     		slow=slow.next;
-    		fast=fast.next;
+    		fast=fast.next.next;
     	}
     	ListNode head1=head;
     	ListNode head2=reverse1(slow.next);
