@@ -1,10 +1,7 @@
 package easy;
-/**
- * 思路一：（递归）如果左子树与右子树的高度相差超过一，false，否则true
- * 
- * @author xiaohu
- *
- */
+
+import util.TreeNode;
+
 public class BalancedBinaryTree {
 	public boolean isBalanced(TreeNode root) {
 		if (root == null) {

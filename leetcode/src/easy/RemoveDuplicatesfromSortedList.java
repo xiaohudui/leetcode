@@ -1,5 +1,7 @@
 package easy;
 
+import util.ListNode;
+
 public class RemoveDuplicatesfromSortedList {
 	public ListNode deleteDuplicates(ListNode head) {
 		if(head==null){

@@ -1,5 +1,7 @@
 package medium;
 
+import util.ListNode;
+
 public class ReverseLinkedList {
     public ListNode reverseList(ListNode head) {
     	if(head==null ||head.next==null){
@@ -14,6 +16,7 @@ public class ReverseLinkedList {
         	q=r;
         	r=r.next;
         }
+        
         q.next=p;
         head.next=null;
         return q;

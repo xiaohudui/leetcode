@@ -6,13 +6,8 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
-/**
- * 思路一：（递归解法）必须到叶子节点才可以给出深度，下面代码逃避了是不是叶子节点的讨论，若左为空，右不管是否为空都是右加一
- * 思路二：（非递归解法）（前序遍历）将所有叶子节点的层数存储下来求最小值
- * 思路三：（非递归，层序遍历，队列）
- * @author xiaohu
- *
- */
+import util.TreeNode;
+
 public class MinimumDepthofBinaryTree {
 	public int minDepth(TreeNode root) {
 		if (root == null) {

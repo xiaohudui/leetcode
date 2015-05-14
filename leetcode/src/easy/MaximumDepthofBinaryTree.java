@@ -3,6 +3,8 @@ package easy;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import util.TreeNode;
+
 public class MaximumDepthofBinaryTree {
 	public int maxDepth(TreeNode root) {
 		if (root == null) {

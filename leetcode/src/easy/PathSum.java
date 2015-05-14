@@ -1,12 +1,8 @@
 package easy;
 import java.util.Stack;
 
-/**
- * 思路一:递归（前序遍历） 检查顺序：先左子树，再右子树，递归，所以总顺序就是叶子节点从左到右的顺序（每一个叶子节点对应唯一的路径） 思路二：非递归
- * 思路二：非递归，模拟递归的保留当前结果的算法，也需要栈空间
- * @author xiaohu
- *
- */
+import util.TreeNode;
+
 public class PathSum {
 	public boolean hasPathSum(TreeNode root, int sum) {
 		if (root == null) {

@@ -1,5 +1,7 @@
 package easy;
 
+import util.ListNode;
+
 public class RemoveLinkedListElements {
     public ListNode removeElements(ListNode head, int val) {
         ListNode newHead=new ListNode(0);

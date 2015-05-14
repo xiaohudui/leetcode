@@ -2,6 +2,8 @@ package medium;
 
 import java.util.HashSet;
 
+import util.ListNode;
+
 public class LinkedListCycle {
 	/**
 	 * 思路一：set存储所有节点，遇到重复就表明有环

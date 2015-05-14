@@ -1,9 +1,6 @@
 package easy;
-/**
- * tip:链表通过构造假头结点的方法往往可以避免讨论边界条件
- * @author xiaohu
- *
- */
+
+import util.ListNode;
 public class MergeTwoSortedLists {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
     	ListNode p=l1;

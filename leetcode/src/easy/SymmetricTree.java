@@ -3,6 +3,8 @@ package easy;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import util.TreeNode;
+
 public class SymmetricTree {
 	public boolean isSymmetric(TreeNode root) {
 		if (root == null) {
@@ -16,9 +18,7 @@ public class SymmetricTree {
 		}
 		return isSameTree(root.left, root.right);
 	}
-	/**
-	 * 递归方法
-	 */
+
 	public boolean isSameTree(TreeNode left, TreeNode right) {
 		if (left == null && right == null) {
 			return true;
@@ -28,10 +28,7 @@ public class SymmetricTree {
 		}
 		return isSameTree(left.left, right.right) && isSameTree(left.right, right.left);
 	}
-	/**
-	 * 非递归方法
-	 * 队列为层序遍历，栈为中序遍历
-	 */
+
 	public boolean isSymmetricTree(TreeNode t1, TreeNode t2) {
 		Queue<TreeNode> q1 = new LinkedList<TreeNode>();
 		Queue<TreeNode> q2 = new LinkedList<TreeNode>();

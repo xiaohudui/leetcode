@@ -1,14 +1,9 @@
 package medium;
-/**
- * 关于链表的问题，加上伪头指针会减少讨论
- * 
- * @author xiaohu
- *
- */
+
+import util.ListNode;
+
 public class ReverseLinkedListII {
-	/**
-	 * 思路一：将m到n之间的所有指针反转，记住m和m之前的节点，然后接回去就行了
-	 */
+
 	public ListNode reverseBetween(ListNode head, int m, int n) {
 		int cnt = 1;
 		ListNode pHead = new ListNode(0);
@@ -40,7 +35,7 @@ public class ReverseLinkedListII {
 		return pHead.next;
 	}
 	/**
-	 * 思路二：找到第m个节点，将m节点后的节点插入m节点之前，m节点指向其后的节点
+	 * 思路锟斤拷锟斤拷锟揭碉拷锟斤拷m锟斤拷锟节点，锟斤拷m锟节碉拷锟侥节碉拷锟斤拷锟絤锟节碉拷之前锟斤拷m锟节碉拷指锟斤拷锟斤拷锟侥节碉拷
 	 */
 	public ListNode reverseBetween1(ListNode head, int m, int n) {
 		ListNode dummy=new ListNode(0);
