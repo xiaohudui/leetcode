@@ -2,6 +2,7 @@ package test;
 
 public class Test {
 	public static void main(String[] args) {
-		System.out.println(null==null);
+		int i=1,j=1;
+		System.out.println(i*+j);
 	}
 }
