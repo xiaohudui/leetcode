@@ -1,6 +1,6 @@
 package test;
 
-import medium.InsertionSortList;
+import medium.SortList;
 import util.ListNode;
 
 public class LinkedListTest {
@@ -13,11 +13,11 @@ public class LinkedListTest {
 		ListNode five = new ListNode(2);
 		head.next = one;
 		one.next = two;
-		two.next = null;
-//		three.next = four;
-//		four.next = five;
-//		five.next = null;
-		ListNode res = new InsertionSortList().insertionSortList(head);
+		two.next = three;
+		three.next = four;
+		four.next = five;
+		five.next = null;
+		ListNode res = new SortList().sortList(head);
 		while (res != null) {
 			System.out.println(res.val);
 			res=res.next;
