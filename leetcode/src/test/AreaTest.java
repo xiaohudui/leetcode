@@ -1,8 +1,8 @@
 package test;
 
 import medium.SurroundedRegions;
-
 public class AreaTest {
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		char[][] board={{'X','X','X','X'},
 						{'X','O','O','X'},
