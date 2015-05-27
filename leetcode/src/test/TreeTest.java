@@ -1,8 +1,8 @@
 package test;
-
-import medium.SumRoottoLeafNumbers;
+import medium.BinaryTreeInorderTraversal;
 import util.TreeNode;
 
+@SuppressWarnings("all")
 public class TreeTest {
 	public static void main(String[] args) {
 		TreeNode t1 = new TreeNode(1);
@@ -14,6 +14,6 @@ public class TreeTest {
 		t1.right = t3;
 		t3.left = t4;
 		t3.right = t5;
-		System.out.println(new SumRoottoLeafNumbers().sumNumbers(t1));
+		System.out.println(new BinaryTreeInorderTraversal().inorderTraversal(t1));
 	}
 }
