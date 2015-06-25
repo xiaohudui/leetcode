@@ -1,8 +1,13 @@
 package demo;
 
 public class Demo {
-	public native int test();
 	public static void main(String[] args) {
-		System.out.println("*".equals("*"));
+		int[] cnt=new int[1];
+		System.out.println(cnt[0]);
+		add(cnt);
+		System.out.println(cnt[0]);
+	}
+	public static void add(int[] cnt){
+		cnt[0]++;
 	}
 }
