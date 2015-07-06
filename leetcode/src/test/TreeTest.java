@@ -1,6 +1,9 @@
 package test;
-import medium.BinaryTreeInorderTraversal;
+import java.util.LinkedList;
+import java.util.Queue;
+
 import util.TreeNode;
+import easy.InvertBinaryTree;
 
 @SuppressWarnings("all")
 public class TreeTest {
@@ -14,6 +17,22 @@ public class TreeTest {
 		t1.right = t3;
 		t3.left = t4;
 		t3.right = t5;
-		System.out.println(new BinaryTreeInorderTraversal().inorderTraversal(t1));
+		TreeNode root=new InvertBinaryTree().invertTree(t1);
+		
+	}
+	public static void printTree(TreeNode root){
+		if(root==null){
+			return;
+		}
+		Queue<TreeNode> queue=new LinkedList<TreeNode>();
+		TreeNode nullNode=new TreeNode(-1);
+		int nullCnt=0;
+		int i=0;
+		int j=0;
+		queue.offer(root);
+		while(!queue.isEmpty()){
+			TreeNode node=queue.poll();
+		}
+		
 	}
 }
