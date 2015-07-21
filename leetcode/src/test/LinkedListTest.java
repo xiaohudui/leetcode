@@ -1,8 +1,7 @@
 package test;
 
-import easy.DeleteNodeinaLinkedList;
-import medium.SortList;
 import util.ListNode;
+import easy.DeleteNodeinaLinkedList;
 
 public class LinkedListTest {
 	public static void main(String[] args) {
@@ -19,10 +18,10 @@ public class LinkedListTest {
 		four.next = five;
 		five.next = null;
 		new DeleteNodeinaLinkedList().deleteNode(two);
-		ListNode res=head;
+		ListNode res = head;
 		while (res != null) {
 			System.out.println(res.val);
-			res=res.next;
+			res = res.next;
 		}
 	}
 }
