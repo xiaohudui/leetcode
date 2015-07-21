@@ -1,5 +1,6 @@
 package test;
 
+import medium.RotateList;
 import util.ListNode;
 import easy.DeleteNodeinaLinkedList;
 
@@ -17,8 +18,7 @@ public class LinkedListTest {
 		three.next = four;
 		four.next = five;
 		five.next = null;
-		new DeleteNodeinaLinkedList().deleteNode(two);
-		ListNode res = head;
+		ListNode res = new RotateList().rotateRight(head, 6);
 		while (res != null) {
 			System.out.println(res.val);
 			res = res.next;
