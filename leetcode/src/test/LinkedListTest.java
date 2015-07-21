@@ -2,7 +2,6 @@ package test;
 
 import medium.RotateList;
 import util.ListNode;
-import easy.DeleteNodeinaLinkedList;
 
 public class LinkedListTest {
 	public static void main(String[] args) {
