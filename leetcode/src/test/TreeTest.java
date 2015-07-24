@@ -2,6 +2,7 @@ package test;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import medium.PathSumII;
 import util.TreeNode;
 import easy.InvertBinaryTree;
 
@@ -17,8 +18,7 @@ public class TreeTest {
 		t1.right = t3;
 		t3.left = t4;
 		t3.right = t5;
-		TreeNode root=new InvertBinaryTree().invertTree(t1);
-		
+		System.out.println(new PathSumII().pathSum(t1, 8));
 	}
 	public static void printTree(TreeNode root){
 		if(root==null){
@@ -33,6 +33,5 @@ public class TreeTest {
 		while(!queue.isEmpty()){
 			TreeNode node=queue.poll();
 		}
-		
 	}
 }
