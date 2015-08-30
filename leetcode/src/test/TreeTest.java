@@ -4,6 +4,7 @@ import java.util.Queue;
 
 import medium.PathSumII;
 import util.TreeNode;
+import easy.BinaryTreePaths;
 import easy.InvertBinaryTree;
 
 @SuppressWarnings("all")
@@ -18,7 +19,7 @@ public class TreeTest {
 		t1.right = t3;
 		t3.left = t4;
 		t3.right = t5;
-		System.out.println(new PathSumII().pathSum(t1, 8));
+		System.out.println(new BinaryTreePaths().binaryTreePaths(t1));
 	}
 	public static void printTree(TreeNode root){
 		if(root==null){
