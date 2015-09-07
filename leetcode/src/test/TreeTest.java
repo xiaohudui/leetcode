@@ -3,6 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import medium.BinaryTreeZigzagLevelOrderTraversal;
 import medium.UniqueBinarySearchTreeII;
 import util.TreeNode;
 
@@ -18,11 +19,7 @@ public class TreeTest {
 		t1.right = t3;
 		t3.left = t4;
 		t3.right = t5;
-		printTree(t1);
-		List<TreeNode> res=new UniqueBinarySearchTreeII().generateTrees(3);
-		for (TreeNode root : res) {
-			printTree(root);
-		}
+		System.out.println(new BinaryTreeZigzagLevelOrderTraversal().zigzagLevelOrder(t1));
 	}
 	public static void printTree(TreeNode root){
 		if(root==null){

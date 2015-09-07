@@ -38,6 +38,7 @@ public class SubSets {
      * 对每个元素都有存在和不存在两种情况
      */
     public List<List<Integer>> subsets(int[] nums) {
+    	Arrays.sort(nums);
     	List<List<Integer>> res=new ArrayList<List<Integer>>();
     	res.add(new ArrayList<Integer>());
     	List<List<Integer>> temp=new ArrayList<List<Integer>>();
