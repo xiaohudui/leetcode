@@ -13,6 +13,9 @@ public class DecodeWays {
         return cnt[0];
     }
     public void helper(String s,int[] cnt){
+    	if(!canDecode(s)){
+    		return;
+    	}
     	if(s.equals("")){
     		cnt[0]++;
     	}
@@ -27,7 +30,7 @@ public class DecodeWays {
     		return false;
     	}
     	if(s.startsWith("0")){
-    		return s.equals("0");
+    		return false;
     	}else{
     		return Integer.parseInt(s)>=1 && Integer.parseInt(s)<=26;
     	}
@@ -49,21 +52,47 @@ public class DecodeWays {
 		}
     	return res;
     }
+    public boolean canDecode(String s){
+    	for (int i = 0; i < s.length(); i++) {
+			if(s.charAt(i)=='0'){
+				if(i==0){
+					return false;
+				}else{
+					if(!isValid(s.substring(i-1,i+1))){
+						return false;
+					}
+				}
+			}
+		}
+    	return true;
+    }
     /**
      * 求数量的方法都可以动态规划，求具体方案的要用递归
      */
     public int numDecodings(String s) {
+    	if(s==null || s.length()==0 || !canDecode(s)){
+    		return 0;
+    	}
+    	if(s.length()==1){
+    	    return 1;
+    	}
     	int N=s.length();
     	int[] dp=new int[N];
     	dp[0]=1;
-    	dp[1]=isValid(s.substring(0,2))?2:1;
+    	dp[1]=isValid(s.substring(0,2))&&s.charAt(1)!='0'?2:1;
     	for (int i = 2; i < N; i++) {
-			dp[i]=isValid(s.substring(i-1,i+1))?dp[i-1]+dp[i-2]:dp[i-1];
+    		if(isValid(s.substring(i-1,i+1)) && s.charAt(i)!='0'){
+    			dp[i]=dp[i-1]+dp[i-2];
+    		}else if(s.charAt(i)=='0'){
+    			dp[i]=dp[i-2];
+    		}else{
+    			dp[i]=dp[i-1];
+    		}
 		}
     	return dp[N-1];
     }
     public static void main(String[] args) {
-    	String s="1323232324";
+    	String s="13213204343";
 		System.out.println(new DecodeWays().numDecodings(s));
 		System.out.println(new DecodeWays().numDecodings1(s));
 	}
