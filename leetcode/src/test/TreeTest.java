@@ -1,11 +1,10 @@
 package test;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
-import medium.PathSumII;
+import medium.UniqueBinarySearchTreeII;
 import util.TreeNode;
-import easy.BinaryTreePaths;
-import easy.InvertBinaryTree;
 
 @SuppressWarnings("all")
 public class TreeTest {
@@ -19,20 +18,35 @@ public class TreeTest {
 		t1.right = t3;
 		t3.left = t4;
 		t3.right = t5;
-		System.out.println(new BinaryTreePaths().binaryTreePaths(t1));
+		printTree(t1);
+		List<TreeNode> res=new UniqueBinarySearchTreeII().generateTrees(3);
+		for (TreeNode root : res) {
+			printTree(root);
+		}
 	}
 	public static void printTree(TreeNode root){
 		if(root==null){
 			return;
 		}
+		boolean lastLevel=false;
 		Queue<TreeNode> queue=new LinkedList<TreeNode>();
-		TreeNode nullNode=new TreeNode(-1);
-		int nullCnt=0;
-		int i=0;
-		int j=0;
 		queue.offer(root);
-		while(!queue.isEmpty()){
+		String res="";
+		while(!queue.isEmpty() && !lastLevel){
 			TreeNode node=queue.poll();
+			if(node==null){
+				res+="# ";
+				continue;
+			}else{
+				res+=node.val+" ";
+				queue.offer(node.left);
+				queue.offer(node.right);
+			}
 		}
+		int index=res.length()-1;
+		while(index>0 && (res.charAt(index)==' ' || res.charAt(index)=='#')){
+			index--;
+		}
+		System.out.println(res.substring(0,index+1));
 	}
 }
